@@ -1,0 +1,74 @@
+Benchmarking Latency for Allocations of Size 64 Bytes:
+NUMA Local Latency: 737410.29 ns
+NUMA Interleaved Latency: 734880.48 ns
+Malloc Latency: 0.00 ns
+
+Benchmarking Throughput with 4 Threads and Allocations of Size 64 Bytes:
+NUMA Local Throughput: 1224450.06 ns per allocation
+NUMA Interleaved Throughput: 1251373.52 ns per allocation
+Malloc Throughput: 1047433.13 ns per allocation
+
+Benchmarking Access Time for Allocations of Size 64 Bytes:
+NUMA Local Access Time: 33.83 ns
+NUMA Interleaved Access Time: 32.27 ns
+Malloc Access Time: 0.78 ns
+
+Benchmarking Latency for Allocations of Size 256 Bytes:
+NUMA Local Latency: 781159.61 ns
+NUMA Interleaved Latency: 802148.42 ns
+Malloc Latency: 0.01 ns
+
+Benchmarking Throughput with 4 Threads and Allocations of Size 256 Bytes:
+NUMA Local Throughput: 1131085.01 ns per allocation
+NUMA Interleaved Throughput: 914592.03 ns per allocation
+Malloc Throughput: 920964.70 ns per allocation
+
+Benchmarking Access Time for Allocations of Size 256 Bytes:
+NUMA Local Access Time: 8.49 ns
+NUMA Interleaved Access Time: 11.59 ns
+Malloc Access Time: 0.31 ns
+
+Benchmarking Latency for Allocations of Size 1024 Bytes:
+NUMA Local Latency: 784483.71 ns
+NUMA Interleaved Latency: 800978.84 ns
+Malloc Latency: 0.00 ns
+
+Benchmarking Throughput with 4 Threads and Allocations of Size 1024 Bytes:
+NUMA Local Throughput: 1156048.84 ns per allocation
+NUMA Interleaved Throughput: 923320.66 ns per allocation
+Malloc Throughput: 923190.70 ns per allocation
+
+Benchmarking Access Time for Allocations of Size 1024 Bytes:
+NUMA Local Access Time: 3.42 ns
+NUMA Interleaved Access Time: 1.99 ns
+Malloc Access Time: 0.08 ns
+
+Benchmarking Latency for Allocations of Size 4096 Bytes:
+NUMA Local Latency: 782143.73 ns
+NUMA Interleaved Latency: 801147.86 ns
+Malloc Latency: 0.00 ns
+
+Benchmarking Throughput with 4 Threads and Allocations of Size 4096 Bytes:
+NUMA Local Throughput: 1204026.16 ns per allocation
+NUMA Interleaved Throughput: 1273926.87 ns per allocation
+Malloc Throughput: 987459.96 ns per allocation
+
+Benchmarking Access Time for Allocations of Size 4096 Bytes:
+NUMA Local Access Time: 0.97 ns
+NUMA Interleaved Access Time: 1.04 ns
+Malloc Access Time: 0.08 ns
+
+Benchmarking Latency for Allocations of Size 16384 Bytes:
+NUMA Local Latency: 783970.00 ns
+NUMA Interleaved Latency: 802104.25 ns
+Malloc Latency: 0.00 ns
+
+Benchmarking Throughput with 4 Threads and Allocations of Size 16384 Bytes:
+NUMA Local Throughput: 931129.57 ns per allocation
+NUMA Interleaved Throughput: 1102421.28 ns per allocation
+Malloc Throughput: 1233589.19 ns per allocation
+
+Benchmarking Access Time for Allocations of Size 16384 Bytes:
+NUMA Local Access Time: 0.49 ns
+NUMA Interleaved Access Time: 0.47 ns
+Malloc Access Time: 0.41 ns

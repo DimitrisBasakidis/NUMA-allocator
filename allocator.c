@@ -168,6 +168,7 @@ void init_allocator(size_t heap_size) {
     }
 
     restore_thread_affinity();
+
 }
 void *allocate_localy(size_t size) {
     assert(size > 0);
@@ -197,28 +198,16 @@ void *allocate_localy(size_t size) {
     }
 
     free_block *ptr = heap->free_list[bin_index];
-    free_block *prev = NULL;
 
-    while (ptr != NULL) {
-        if (!ptr) break;
+    if (!ptr) return NULL;
 
-	if (ptr->size >= size) {
-	    void *temp = ptr->starting_addr;
-	    if (prev != NULL) prev->next = ptr->next;
-	    else heap->free_list[bin_index] = (free_block *) ptr->next;
+    void *temp = ptr->starting_addr;
+    heap->free_list[bin_index] = (free_block *) ptr->next;
 
-            restore_thread_affinity();
-            pthread_mutex_unlock(&heap->lock);
-            return temp;
-	}
-    
-    	prev = ptr;
-	ptr = (free_block *) ptr->next;
-    }
-
-    pthread_mutex_unlock(&heap->lock);
     restore_thread_affinity();
-    return NULL;
+    pthread_mutex_unlock(&heap->lock);
+
+    return temp;
 }
 
 void *allocate_interleaved(size_t size) {
@@ -250,28 +239,16 @@ void *allocate_interleaved(size_t size) {
     }
 
     free_block *ptr = heap->free_list[bin_index];
-    free_block *prev = NULL;
 
-    while (ptr != NULL) {
-        if (!ptr) break;
+    if (!ptr) return NULL;
 
-	if (ptr->size >= size) {
-	    void *temp = ptr->starting_addr;
-	    if (prev != NULL) prev->next = ptr->next;
-	    else heap->free_list[bin_index] = (free_block *) ptr->next;
+    void *temp = ptr->starting_addr;
+    heap->free_list[bin_index] = (free_block *) ptr->next;
 
-            restore_thread_affinity();
-            pthread_mutex_unlock(&heap->lock);
-            return temp;
-	}
-    
-    	prev = ptr;
-	ptr = (free_block *) ptr->next;
-    }
-
-    pthread_mutex_unlock(&heap->lock);
     restore_thread_affinity();
-    return NULL;
+    pthread_mutex_unlock(&heap->lock);
+
+    return temp;
 }
 
 void free_allocator(void) {

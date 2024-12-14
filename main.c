@@ -139,6 +139,7 @@ void benchmark_access_time(size_t alloc_size) {
 
 // Main Benchmarking Function
 int main() {
+	
     init_allocator(1024 * 1024 * 24); // 24 MB allocator initialization
 
     size_t sizes[] = {64, 256, 1024, 4096, 16384}; // Different allocation sizes
