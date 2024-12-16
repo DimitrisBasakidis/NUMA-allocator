@@ -169,6 +169,10 @@ void init_allocator(size_t heap_size) {
 
     restore_thread_affinity();
 
+
+	print_heap(numa_heaps, 0);
+	print_heap(numa_heaps, 1);
+
 }
 void *allocate_localy(size_t size) {
     assert(size > 0);
@@ -297,7 +301,6 @@ void deallocate(void *ptr) {
     size_t bin_index = -1;
     if (ptr <= free_lists_starting_addr[node][0]) bin_index = 0;
     else 
-   // {
     for (size_t i = 0U; i < BINS - 1; i++) {
 	void *temp = free_lists_starting_addr[node][i + 1];
 	if (!temp) continue;
@@ -306,7 +309,6 @@ void deallocate(void *ptr) {
 	    break;
 	}
     }
-    //printf("in deallocate the bin index is %ld and in node %d\n", bin_index, node);
     free_block *to_free = (free_block *) mem_alloc(sizeof(free_block));
     to_free->starting_addr = ptr;
 
