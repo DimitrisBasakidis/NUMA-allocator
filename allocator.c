@@ -168,12 +168,8 @@ void init_allocator(size_t heap_size) {
     }
 
     restore_thread_affinity();
-
-
-	print_heap(numa_heaps, 0);
-	print_heap(numa_heaps, 1);
-
 }
+
 void *allocate_localy(size_t size) {
     assert(size > 0);
 
